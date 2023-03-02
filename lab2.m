@@ -15,7 +15,7 @@ noisePower = 0.002;
 T = 0.01;
 
 A = [0, 1, 0, 0;
-    constA, 0, 0, (constA .* constC)./(n .* g);
+    constA, 0, 0, -(constA .* constC)./(n .* g);
     0, 0, 0, 1;
     0, 0, 0, -constC];
 B = [0; (constA .* constD)./(n .* g); 0; constD];
