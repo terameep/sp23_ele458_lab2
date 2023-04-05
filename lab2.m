@@ -23,7 +23,7 @@ C = eye(4);
 D = zeros(4,1);
 
 %% slider variables
-Ts = .66; % default 1, between .1 and 2
+Ts = .9; % default 1, between .1 and 2
 f = 5; % greater than or equal default 5
 
 %% filter
@@ -36,8 +36,8 @@ vfilter_d = c2d(vfilter_a,T,'tustin'); % digital differentiator with lowpass fil
 [Af,Bf,Cf,Df]=ssdata(vfilter_d); % convert vfilter_d to state-space model
 
 %% poles
-sPoles = s4/Ts;
-% sPoles = [-25 s3/Ts]
+% sPoles = s4/Ts;
+sPoles = [-25 s3/Ts]
 
 zpoles = exp(T * sPoles);
 
